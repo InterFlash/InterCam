@@ -10,7 +10,7 @@ public class InterCam : MonoBehaviour
     [SerializeField] float speedXZ               = 10f;
     [SerializeField] float speedUpDown           = 10f;
     [SerializeField] float Scrollspeed           = 10f;
-    [SerializeField] float Sensetifity           = 30f;
+    [SerializeField] float Sensitivity           = 30f;
     [SerializeField] float FlashfactorMultiplyer = 4f;
     [SerializeField] bool LowerNearClipping      = true;
 
@@ -82,7 +82,7 @@ public class InterCam : MonoBehaviour
         if ((Input.GetMouseButton(0) && !Input.GetMouseButtonDown(0)) ||
             (Input.GetMouseButton(1) && !Input.GetMouseButtonDown(1))) {
             var dPos = Input.mousePosition - preMousePosition_;
-            targetEuler_ += new Vector3(-dPos.y, dPos.x, 0f) * Time.deltaTime * Sensetifity;
+            targetEuler_ += new Vector3(-dPos.y, dPos.x, 0f) * Time.deltaTime * Sensitivity;
             targetEuler_.x = Mathf.Clamp(targetEuler_.x, -90f, 90f);
         }
     }
